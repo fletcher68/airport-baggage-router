@@ -60,6 +60,7 @@ Below is the gradle version, java version, etc.
 
 $ gradle -v
 
+<pre>
 ------------------------------------------------------------
 Gradle 4.8.1
 ------------------------------------------------------------
@@ -71,12 +72,13 @@ Groovy:       2.4.12
 Ant:          Apache Ant(TM) version 1.9.11 compiled on March 23 2018
 JVM:          1.8.0_171 (Oracle Corporation 25.171-b11)
 OS:           Linux 4.10.0-38-generic amd64
-
+</pre>
 $ java -version
+<pre>
 java version "1.8.0_171"
 Java(TM) SE Runtime Environment (build 1.8.0_171-b11)
 Java HotSpot(TM) 64-Bit Server VM (build 25.171-b11, mixed mode)
-
+</pre>
 
 To build the code and run unit test execute following command 
 (gradle wrapper -> gradlew) on command line if you don't have gradle 
