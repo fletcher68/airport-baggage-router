@@ -1,4 +1,4 @@
-This project:  Airport Baggage
+<h1>This project:  Airport Baggage</h1>
 
 Denver International Airport has decided to give an automated baggage system 
 another shot. The hardware and tracking systems from the previous attempt are 
