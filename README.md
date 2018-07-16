@@ -6,9 +6,8 @@ still in place, they just need a system to route the baggage. The system will
 route baggage checked, connecting, and terminating in Denver. You have been 
 asked to implement a system that will route bags to their flights or the 
 proper baggage claim. The input describes the airport conveyor system, the 
-departing flights, and the bags to be routed. The output is the optimal routing 
-to get bags to their destinations. Bags with a flight id of “ARRIVAL” are 
-terminating in Denver are routed to Baggage Claim.
+departing flights, and the bags to be routed. The output is the optimal 
+routing to get bags to their destinations. Bags with a flight id of “ARRIVAL” are terminating in Denver are routed to Baggage Claim.
 
 Below is the project structure.  It contains all source code, 
 build files, and a gradle binary for building the code.  
@@ -35,7 +34,7 @@ means a shorter travel time.
     ├── main
     │   ├── java
     │   │   └── com
-    │   │       └── fletcher
+    │   │       └── jaqen
     │   │           ├── AirPortBaggage.java
     │   │           ├── AirPortBaggageRouter.java
     │   │           ├── Bag.java
@@ -49,7 +48,7 @@ means a shorter travel time.
     └── test
         ├── java
         │   └── com
-        │       └── fletcher
+        │       └── jaqen
         │           └── AirPortBaggageTest.java
         └── resources
 
