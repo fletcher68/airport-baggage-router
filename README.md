@@ -90,9 +90,8 @@ or if you already have gradle installed
 
 >   gradle clean build test
    
-<pre>
 Produces the following output...
-
+<pre>
 > Task :clean UP-TO-DATE
 > Task :compileJava
 > Task :processResources NO-SOURCE
