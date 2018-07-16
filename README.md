@@ -54,6 +54,11 @@ means a shorter travel time.
         └── resources
 </pre>
 
+<h3>To clone this repo</h3>
+<pre>
+https://github.com/many-faced-g0d/airport-baggage-router.git
+</pre>
+
 Java 1.8 is required to run this program.  
 
 Below is the gradle version, java version, etc.
