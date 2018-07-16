@@ -73,6 +73,7 @@ Ant:          Apache Ant(TM) version 1.9.11 compiled on March 23 2018
 JVM:          1.8.0_171 (Oracle Corporation 25.171-b11)
 OS:           Linux 4.10.0-38-generic amd64
 </pre>
+
 $ java -version
 <pre>
 java version "1.8.0_171"
@@ -105,11 +106,11 @@ Produces the following output...
 > Task :test
 
 
-com.fletcher.AirPortBaggageTest > testYObjectGraph2() STANDARD_OUT
+com.jaqen.AirPortBaggageTest > testYObjectGraph2() STANDARD_OUT
     Following are all different paths from 2 to 3
     2 0 1 3 2 0 3 2 1 3 
 
-com.fletcher.AirPortBaggageTest > testZObjectGraph() STANDARD_OUT
+com.jaqen.AirPortBaggageTest > testZObjectGraph() STANDARD_OUT
     BEGIN UNIT TEST
     Following are all different paths from 10 to 6
     10 9 8 7 4 6 
