@@ -18,9 +18,10 @@ minimum number of node hops from start node to end node.  Time is not
 considered when computing the optimized route.  It is assumed that fewer hops
 means a shorter travel time.
 
+<pre>
 .
-├── airport-baggage.in<br>
-├── build.gradle<br>
+├── airport-baggage.in
+├── build.gradle
 ├── gradle
 │   └── wrapper
 │       ├── gradle-wrapper.jar
@@ -51,7 +52,7 @@ means a shorter travel time.
         │       └── jaqen
         │           └── AirPortBaggageTest.java
         └── resources
-
+</pre>
 
 Java 1.8 is required to run this program.  
 
