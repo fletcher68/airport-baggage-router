@@ -88,6 +88,7 @@ or if you already have gradle installed
 
 >   gradle clean build test
    
+<pre>
 Produces the following output...
 
 > Task :clean UP-TO-DATE
@@ -101,6 +102,7 @@ Produces the following output...
 > Task :testClasses
 
 > Task :test
+
 
 com.fletcher.AirPortBaggageTest > testYObjectGraph2() STANDARD_OUT
     Following are all different paths from 2 to 3
@@ -116,7 +118,7 @@ com.fletcher.AirPortBaggageTest > testZObjectGraph() STANDARD_OUT
 
 BUILD SUCCESSFUL in 1s
 5 actionable tasks: 4 executed, 1 up-to-date
-
+</pre>
 
 To run code, execute the following command on the command line.
 
@@ -124,17 +126,19 @@ To run code, execute the following command on the command line.
 
 Produces the following stdout:
 
+<pre>
 0001 Concourse_A_Ticketing A5 A1 : 11
 0002 A5 A1 A2 A3 A4 : 9
 0003 A2 A1 : 1
 0004 A8 A9 A10 A5 : 6
 0005 A7 A8 A9 A10 A5 BaggageClaim : 12
-
+</pre>
 
 The contents of input file: airport-baggage.in.
 
 > cat airport-baggage.in
 
+<pre>
 # Section: Conveyor System
 Concourse_A_Ticketing A5 5
 A5 BaggageClaim 5
@@ -163,6 +167,7 @@ UA18 A5 LAX 10:15
 0003 A2 UA10
 0004 A8 UA18
 0005 A7 ARRIVAL
+</pre>
 
 The program has limited input validation.  Currently only supports that each
 section of input contains the appropriate number of fields. If the number of 
@@ -195,12 +200,13 @@ If input is valid, an output file is written, "airport-baggage.out".  Again
 limited input validation occurs in the program.  
 
  > cat airport-baggage.out
+<pre>
 0001 Concourse_A_Ticketing A5 A1 : 11
 0002 A5 A1 A2 A3 A4 : 9
 0003 A2 A1 : 1
 0004 A8 A9 A10 A5 : 6
 0005 A7 A8 A9 A10 A5 BaggageClaim : 12
-
+</pre>
 
 The output : The optimized route for each bag.  The program only takes 
 into consideration the shortest number of hops from the starting node to 
