@@ -69,8 +69,8 @@ public class AirPortBaggage
 	{
 		for (ConveyorSystem cs : abr.getConveyorSystems())
 		{
-			Node node1 = cs.getNode1();
-			Node node2 = cs.getNode2();
+			Node node1 = cs.getStartNode();
+			Node node2 = cs.getEndNode();
 			g.addRoute(node1.getNodeId(), node2.getNodeId());
 		}
 
@@ -107,15 +107,15 @@ public class AirPortBaggage
 			Node p2 = Node.getNode(routeLegs[1]);
 			Long travelTime = Long.parseLong(routeLegs[2]);
 
-			cs1.setNode1(p1);
-			cs1.setNode2(p2);
+			cs1.setStartNode(p1);
+			cs1.setEndNode(p2);
 			cs1.setTravelTime(travelTime);
 
 			abr.addConveyorSystem(cs1);
 
 			ConveyorSystem cs2 = new ConveyorSystem();
-			cs2.setNode1(p2);
-			cs2.setNode2(p1);
+			cs2.setStartNode(p2);
+			cs2.setEndNode(p1);
 			cs2.setTravelTime(travelTime);
 
 			abr.addConveyorSystem(cs2);

@@ -178,8 +178,8 @@ public class AirPortBaggageRouter
 			for (ConveyorSystem cs : this.getConveyorSystems())
 			{
 				// System.out.println(cs+" "+n1+" "+n2);
-				if (cs.getNode1().getName().equals(startNode.getName())
-						&& cs.getNode2().getName().equals(endNode.getName()))
+				if (cs.getStartNode().getName().equals(startNode.getName())
+						&& cs.getEndNode().getName().equals(endNode.getName()))
 				{
 					tt += cs.getTravelTime();
 					break;

@@ -10,28 +10,28 @@ package com.jaqen;
 public class ConveyorSystem
 {
 
-	Node node1;
-	Node node2;
+	Node startNode;
+	Node endNode;
 	Long travelTime;
 
-	public Node getNode1()
+	public Node getStartNode()
 	{
-		return node1;
+		return startNode;
 	}
 
-	public void setNode1(Node n)
+	public void setStartNode(Node n)
 	{
-		this.node1 = n;
+		this.startNode = n;
 	}
 
-	public Node getNode2()
+	public Node getEndNode()
 	{
-		return node2;
+		return endNode;
 	}
 
-	public void setNode2(Node n)
+	public void setEndNode(Node n)
 	{
-		this.node2 = n;
+		this.endNode = n;
 	}
 
 	public Long getTravelTime()
@@ -46,6 +46,6 @@ public class ConveyorSystem
 
 	public String toString()
 	{
-		return "[" + node1 + "][" + node2 + "][" + travelTime + "]";
+		return "[" + startNode + "][" + endNode + "][" + travelTime + "]";
 	}
 }
