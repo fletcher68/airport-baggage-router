@@ -7,7 +7,7 @@ version = '1.0'
 jar {
     from 'src/main/java'
     manifest {
-        attributes('Main-Class': 'com.fletcher.AirPortBaggage',
+        attributes('Main-Class': 'com.jaqen.AirPortBaggage',
                    'Implementation-Title': project.name,
                    'Implementation-Version': project.version)
     }
