@@ -72,9 +72,12 @@ class AirPortBaggageTest
 		System.out.println("Following are all different paths from " + startNode + " to " + endNode);
 
 		StringBuilder sb = new StringBuilder();
-		for (int i : route.get(0))
+		for(List<Integer> l : route)
 		{
-			sb.append(i + " ");
+			for(Integer i : l)
+			{
+				sb.append(i+" ");
+			}
 		}
 
 		// fail("Not yet implemented");
@@ -112,17 +115,20 @@ class AirPortBaggageTest
 		System.out.println("Following are all different paths from " + startNode + " to " + endNode);
 
 		StringBuilder sb = new StringBuilder();
-
-		for (int i : route.get(0))
+		
+		for(List<Integer> l : route)
 		{
-			sb.append(i + " ");
+			for(Integer i : l)
+			{
+				sb.append(i+" ");
+			}
 		}
 
 		System.out.println(sb.toString());
 
 		// fail("Not yet implemented");
 
-		assert sb.toString().trim().equals("2 0 1 3");
+		assert sb.toString().trim().equals("2 0 1 3 2 0 3 2 1 3");
 	}
 
 	/**
