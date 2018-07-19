@@ -158,12 +158,12 @@ public class AirPortBaggageRouter
 	 * 
 	 * @return
 	 */
-	public Long getTravelTimeBetweenNodes()
+	
+	public Long computeTravelTime(List<Integer> route)
 	{
-
 		Long tt = 0L;
 
-		Iterator<Integer> itr = RouteBuilder.getInstance().getOptimalRoute().iterator();
+		Iterator<Integer> itr = route.iterator();
 		int ctr = 0;
 		int previous = 0;
 		while (itr.hasNext())
@@ -201,6 +201,33 @@ public class AirPortBaggageRouter
 		}
 
 		return tt;
+	}
+	
+	/**
+	 * Get the optimum route. This is current computed route based on the fewest
+	 * number of hops. This optimum route doesn't take into consideration the travel
+	 * time between nodes
+	 * 
+	 * @return List<Integer>
+	 */
+
+	public List<Integer> getOptimalRoute(List<List<Integer>> possibleRoutes)
+	{
+		long min = 999;
+		int ctr = 0;
+		int index = 0;
+		for (List<Integer> l : possibleRoutes)
+		{
+			
+			long tt = computeTravelTime(l);
+			if (min > tt)
+			{
+				min = tt;
+				index = ctr;
+			}
+			ctr++;
+		}
+		return possibleRoutes.get(index);
 	}
 
 }

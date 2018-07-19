@@ -67,12 +67,12 @@ class AirPortBaggageTest
 		// arbitrary ending node
 		int endNode = 6;
 
-		List<Integer> route = g.computePath(startNode, endNode);
+		List<List<Integer>> route = g.computePath(startNode, endNode);
 
 		System.out.println("Following are all different paths from " + startNode + " to " + endNode);
 
 		StringBuilder sb = new StringBuilder();
-		for (int i : route)
+		for (int i : route.get(0))
 		{
 			sb.append(i + " ");
 		}
@@ -107,13 +107,13 @@ class AirPortBaggageTest
 		// arbitrary ending node
 		int endNode = 3;
 
-		List<Integer> route = g.computePath(startNode, endNode);
+		List<List<Integer>> route = g.computePath(startNode, endNode);
 
 		System.out.println("Following are all different paths from " + startNode + " to " + endNode);
 
 		StringBuilder sb = new StringBuilder();
 
-		for (int i : route)
+		for (int i : route.get(0))
 		{
 			sb.append(i + " ");
 		}
@@ -122,7 +122,7 @@ class AirPortBaggageTest
 
 		// fail("Not yet implemented");
 
-		assert sb.toString().trim().equals("2 0 3");
+		assert sb.toString().trim().equals("2 0 1 3");
 	}
 
 	/**

@@ -74,7 +74,7 @@ public class Graph
 	 *          int node end
 	 * @return List<Integer> returns route as list of integers
 	 */
-	public List<Integer> computePath(int start, int end)
+	public List<List<Integer>> computePath(int start, int end)
 	{
 
 		RouteBuilder rb = RouteBuilder.getInstance();
@@ -88,7 +88,7 @@ public class Graph
 
 		computePath(start, end, isVisited, pathList);
 
-		return RouteBuilder.getInstance().getOptimalRoute();
+		return RouteBuilder.getInstance().getPossibleRoutes();
 	}
 
 	/**

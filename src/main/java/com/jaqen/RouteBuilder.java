@@ -151,4 +151,9 @@ public class RouteBuilder
 		this.possibleRoutes.add(route);
 	}
 
+	public List<List<Integer>> getPossibleRoutes()
+	{
+		return possibleRoutes;
+	}
+
 }

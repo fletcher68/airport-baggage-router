@@ -235,8 +235,10 @@ public class AirPortBaggage
 			 * the following computePath method determines the route from start node to end
 			 * node and stashes computed route in the singleton object RouteBuilder
 			 */
-			List<Integer> route = g.computePath(Node.getNode(start).getNodeId(), Node.getNode(end).getNodeId());
-
+			List<List<Integer>> routes = g.computePath(Node.getNode(start).getNodeId(), Node.getNode(end).getNodeId());
+			
+			List<Integer> route = abr.getOptimalRoute(routes);
+			
 			System.out.print(bag.getBagNumber() + " ");
 			bufferedWriter.write(bag.getBagNumber() + " ");
 			for (Integer i : route)
@@ -245,7 +247,7 @@ public class AirPortBaggage
 				bufferedWriter.write(Node.getNodeById(i) + " ");
 			}
 
-			Long tt = abr.getTravelTimeBetweenNodes();
+			Long tt = abr.computeTravelTime(route);
 			System.out.print(": " + tt);
 			bufferedWriter.write(": " + tt);
 
