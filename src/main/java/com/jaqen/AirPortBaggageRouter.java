@@ -6,11 +6,9 @@ import java.util.List;
 
 /**
  * Class to encapsulate collection of all domain objects pertaining to the
- * AirPortBaggage router system. Contains collections of conveyorsystems,
+ * AirPortBaggage router system. Contains collections of conveyor systems,
  * departures, and bags. Also contains a helper method used to compute travel
- * time across a conveyor system route that as been computed and stored in the
- * singleton -> RouteBuilder.getInstance().getStashedRoute(), a collection of
- * integers
+ * time across a conveyor system route.
  * 
  * @author Kent Fletcher
  * @date 7/12/2018
@@ -78,8 +76,7 @@ public class AirPortBaggageRouter
 	/**
 	 * For a given bag, get the departure object
 	 * 
-	 * @param bag
-	 *          Bag
+	 * @param bag Bag
 	 * @return Departure
 	 */
 	public Departure getDeparture(Bag bag)
@@ -130,8 +127,7 @@ public class AirPortBaggageRouter
 	/**
 	 * Set list of bags
 	 * 
-	 * @param bags
-	 *          List<Bag>
+	 * @param bags List<Bag>
 	 */
 	public void setBags(List<Bag> bags)
 	{
@@ -141,8 +137,7 @@ public class AirPortBaggageRouter
 	/**
 	 * Add a bag to intaernal collection object -> bags
 	 * 
-	 * @param bag
-	 *          Bag
+	 * @param bag Bag
 	 */
 	public void addBag(Bag bag)
 	{
@@ -150,15 +145,12 @@ public class AirPortBaggageRouter
 	}
 
 	/**
-	 * Helper method to compute the travel time between nodes across a the conveyor
-	 * system route. The route must be stored in the singleton object ->
-	 * RouteBuilder.getInstance().getStashedRoute() before this method gets called.
-	 * The method "public void computePath(...)" on the Graph object stores the
-	 * route in this singleton once it is computed
+	 * Helper method to compute the travel time for the given route passed as the
+	 * argument to the method
 	 * 
 	 * @return
 	 */
-	
+
 	public Long computeTravelTime(List<Integer> route)
 	{
 		Long tt = 0L;
@@ -175,8 +167,7 @@ public class AirPortBaggageRouter
 			{
 				start = itr.next();
 				end = itr.next();
-			}
-			else
+			} else
 			{
 				start = previous;
 				end = itr.next();
@@ -187,7 +178,8 @@ public class AirPortBaggageRouter
 			for (ConveyorSystem cs : this.getConveyorSystems())
 			{
 				// System.out.println(cs+" "+n1+" "+n2);
-				if (cs.getNode1().getName().equals(startNode.getName()) && cs.getNode2().getName().equals(endNode.getName()))
+				if (cs.getNode1().getName().equals(startNode.getName())
+						&& cs.getNode2().getName().equals(endNode.getName()))
 				{
 					tt += cs.getTravelTime();
 					break;
@@ -202,11 +194,9 @@ public class AirPortBaggageRouter
 
 		return tt;
 	}
-	
+
 	/**
-	 * Get the optimum route. This is current computed route based on the fewest
-	 * number of hops. This optimum route doesn't take into consideration the travel
-	 * time between nodes
+	 * Get the optimum route based on minimal travel time
 	 * 
 	 * @return List<Integer>
 	 */
@@ -218,7 +208,7 @@ public class AirPortBaggageRouter
 		int index = 0;
 		for (List<Integer> l : possibleRoutes)
 		{
-			
+
 			long tt = computeTravelTime(l);
 			if (min > tt)
 			{
