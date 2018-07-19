@@ -232,8 +232,8 @@ public class AirPortBaggage
 			}
 
 			/*
-			 * the following computePath method determines the route from start node to end
-			 * node and stashes computed route in the singleton object RouteBuilder
+			 * the following computePath method determines all possible routes from start node to end
+			 * node 
 			 */
 			List<List<Integer>> routes = g.computePath(Node.getNode(start).getNodeId(), Node.getNode(end).getNodeId());
 			

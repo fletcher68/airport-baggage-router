@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Graph class stores collection of nodes and provides method to define which
- * nodes connect and provides a method to compute the route between nodes
+ * Graph class stores collection of nodes where each node is identified as an
+ * integer and provides a method to define which nodes connect to each other,
+ * and provides a method to compute all possible routes between nodes
  * 
  * @author Kent Fletcher
  * @date 7/12/2018
@@ -28,8 +29,7 @@ public class Graph
 	/**
 	 * public constructor for Graph object
 	 * 
-	 * @param numNodes
-	 *          int the total number of nodes defined in the node graph
+	 * @param numNodes int the total number of nodes defined in the node graph
 	 */
 	public Graph(int numNodes)
 	{
@@ -54,10 +54,8 @@ public class Graph
 	/**
 	 * Method to define route between two nodes
 	 * 
-	 * @param node
-	 *          int
-	 * @param adjNode
-	 *          int
+	 * @param node    int
+	 * @param adjNode int
 	 */
 	public void addRoute(int node, int adjNode)
 	{
@@ -68,10 +66,8 @@ public class Graph
 	 * Compute the path between a start and end node given a collection of nodes and
 	 * node routes
 	 * 
-	 * @param start
-	 *          int node start
-	 * @param end
-	 *          int node end
+	 * @param start int node start
+	 * @param end   int node end
 	 * @return List<Integer> returns route as list of integers
 	 */
 	public List<List<Integer>> computePath(int start, int end)
@@ -95,15 +91,12 @@ public class Graph
 	 * Private method computes path between 2 nodes given a collection of node
 	 * routes. Uses recursion to determine path between nodes in the graph
 	 * 
-	 * @param start
-	 *          int starting node the path is to be computed from
-	 * @param end
-	 *          int ending node the path is to be computed from
-	 * @param isVisited
-	 *          boolean[] array of boolean flags denoting if a node has been visited
-	 *          or not
-	 * @param localPathList
-	 *          List<Integer> array list of node routes that is computed.
+	 * @param start         int starting node the path is to be computed from
+	 * @param end           int ending node the path is to be computed from
+	 * @param isVisited     boolean[] array of boolean flags denoting if a node has
+	 *                      been visited or not
+	 * @param localPathList List<Integer> array list of node routes that is
+	 *                      computed.
 	 */
 	private void computePath(Integer start, Integer end, boolean[] isVisited, List<Integer> localPathList)
 	{
@@ -114,8 +107,8 @@ public class Graph
 		isVisited[start] = true;
 
 		/*
-		 * if start = end, stash this route in a singleton. This is the computed route
-		 * after this method is called recursively
+		 * if start = end, stash this route in a singleton. The localPathList is the
+		 * computed route after this method is called recursively
 		 */
 		if (start.equals(end))
 		{
