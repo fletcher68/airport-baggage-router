@@ -7,16 +7,16 @@ route baggage checked, connecting, and terminating in Denver. You have been
 asked to implement a system that will route bags to their flights or the 
 proper baggage claim. The input describes the airport conveyor system, the 
 departing flights, and the bags to be routed. The output is the optimal 
-routing to get bags to their destinations. Bags with a flight id of “ARRIVAL” are terminating in Denver are routed to Baggage Claim.
+routing to get bags to their destinations. Bags with a flight id of “ARRIVAL” 
+are terminating in Denver are routed to Baggage Claim.
 
 Below is the project structure.  It contains all source code, 
 build files, and a gradle binary for building the code.  
 
 The code uses a Graph object and uses recursion to find all valid routes
 from start to end node.  Only the optimized route is returned, i.e., the
-minimum number of node hops from start node to end node.  Time is not 
-considered when computing the optimized route.  It is assumed that fewer hops
-means a shorter travel time.
+minimum number of node hops from start node to end node or the shortest travel
+time. 
 
 <pre>
 .
@@ -215,10 +215,7 @@ limited input validation occurs in the program.
 0005 A7 A8 A9 A10 A5 BaggageClaim : 12
 </pre>
 
-The output : The optimized route for each bag.  The program only takes 
-into consideration the shortest number of hops from the starting node to 
-the ending node.  Time is current not considered when determining the optimized
-route.  However, the total travel time is computed for each optimal route
-and written to the output file.
+The output : The optimized route for each bag.  The total travel time is 
+computed for each optimal route and written to the output file.
 
 <Bag_Number> <point_1> <point_2> [<point_3>, …] : <total_travel_time>
