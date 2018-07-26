@@ -92,6 +92,10 @@ already installed.
 
 >  ./gradlew clean build test
 
+'gradlew' should be executable.  In the event it is not, change it to executable with the following command.
+
+> chmod 755 gradlew
+
 or if you already have gradle installed
 
 >   gradle clean build test
